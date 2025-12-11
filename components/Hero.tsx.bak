@@ -1,0 +1,137 @@
+import React from 'react';
+import Container from './ui/Container';
+import Button from './ui/Button';
+import Card from './ui/Card';
+import { MessageCircle, Users, Target } from 'lucide-react';
+
+export default function Hero() {
+
+  return (
+    <section className="relative bg-gradient-to-br from-primary-50 via-white to-accent-50 py-16 md:py-24 lg:py-32 overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-200 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-200 rounded-full blur-3xl opacity-30"></div>
+      </div>
+
+      <Container className="relative z-10">
+        <div className="text-center max-w-5xl mx-auto mb-12 md:mb-16">
+          {/* Title */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-gray-900 mb-6 leading-tight">
+            Não é "cursinho" de inglês.<br />
+            É um método prático para <span className="text-primary-600">destravar sua conversação</span> em semanas
+          </h1>
+
+          {/* Subtitle */}
+          <p className="text-lg md:text-xl text-gray-700 mb-10 md:mb-12 max-w-4xl mx-auto leading-relaxed">
+            Prática diária no WhatsApp, aula ao vivo semanal + acompanhamento individual + plantão de dúvidas todos os dias
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 md:mb-20">
+            <Button 
+              href="https://wa.me/5519992119886?text=Olá!%20Quero%20destravar%20meu%20inglês"
+              variant="primary"
+            >
+              Quero destravar meu inglês
+            </Button>
+            <Button 
+              href="#como-funciona"
+              variant="secondary"
+            >
+              Ver como funciona na prática
+            </Button>
+          </div>
+
+          {/* Video Section */}
+          <div className="mb-16 md:mb-20">
+            <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-2xl">
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/TVn5ttHithk?rel=0&modestbranding=1"
+                title="Inglês Garantido - Como funciona"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Feature Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {/* Card 1 - Prática diária */}
+          <Card>
+            <div className="flex items-center justify-center w-14 h-14 bg-primary-100 rounded-xl mb-6">
+              <MessageCircle className="w-8 h-8 text-primary-600" />
+            </div>
+            <h3 className="text-xl font-heading font-semibold text-gray-900 mb-4">
+              Prática diária
+            </h3>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start">
+                <span className="inline-block w-1.5 h-1.5 bg-primary-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span>Você pratica inglês comigo todos os dias pelo WhatsApp (por áudio)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="inline-block w-1.5 h-1.5 bg-primary-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span>1 aula ao vivo por semana</span>
+              </li>
+              <li className="flex items-start">
+                <span className="inline-block w-1.5 h-1.5 bg-primary-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span>Programa de conversação, não "videoaula largada"</span>
+              </li>
+            </ul>
+          </Card>
+
+          {/* Card 2 - Acompanhamento individual */}
+          <Card>
+            <div className="flex items-center justify-center w-14 h-14 bg-accent-100 rounded-xl mb-6">
+              <Users className="w-8 h-8 text-accent-600" />
+            </div>
+            <h3 className="text-xl font-heading font-semibold text-gray-900 mb-4">
+              Acompanhamento individual
+            </h3>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start">
+                <span className="inline-block w-1.5 h-1.5 bg-accent-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span>Mapeamos sua rotina e montamos seu cronograma</span>
+              </li>
+              <li className="flex items-start">
+                <span className="inline-block w-1.5 h-1.5 bg-accent-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span>Ideal: 3 a 4x por semana (ou todo dia, de acordo com sua disponibilidade)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="inline-block w-1.5 h-1.5 bg-accent-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span>Ajustes constantes conforme sua evolução</span>
+              </li>
+            </ul>
+          </Card>
+
+          {/* Card 3 - Foco em fala e compreensão */}
+          <Card className="md:col-span-2 lg:col-span-1">
+            <div className="flex items-center justify-center w-14 h-14 bg-primary-100 rounded-xl mb-6">
+              <Target className="w-8 h-8 text-primary-600" />
+            </div>
+            <h3 className="text-xl font-heading font-semibold text-gray-900 mb-4">
+              Foco em fala e compreensão
+            </h3>
+            <ul className="space-y-3 text-gray-700">
+              <li className="flex items-start">
+                <span className="inline-block w-1.5 h-1.5 bg-primary-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span>Nada de gramática inútil</span>
+              </li>
+              <li className="flex items-start">
+                <span className="inline-block w-1.5 h-1.5 bg-primary-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span>Frases reais do dia a dia</span>
+              </li>
+              <li className="flex items-start">
+                <span className="inline-block w-1.5 h-1.5 bg-primary-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span>Método pensado para você falar em 6 meses</span>
+              </li>
+            </ul>
+          </Card>
+        </div>
+      </Container>
+    </section>
+  );
+}
